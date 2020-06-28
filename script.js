@@ -78,6 +78,7 @@ function generatePassword() {
   for(i = 0; i < charAmount; i++) {
     password.push(passwordArray[Math.floor(Math.random() * passwordArray.length)])
   }
+  // converts password into a string, removing the commas.
   const finalPassword = password.join('');
   // returns the password
   return finalPassword;
