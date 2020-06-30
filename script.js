@@ -12,9 +12,10 @@ const specialChar = "`~!@#$%^&*()-_=+[]\|}{',./<>?".split('');
 
 
 // Sync of character amount slider and number input.  I found this method form Web Dev Simplified.
+// Source Link: https://www.youtube.com/watch?v=iKo9pDKKHnc
 characterAmountSlider.addEventListener('input', syncCharacterAmount);
 characterAmountNumber.addEventListener('input', syncCharacterAmount);
-
+// This is the function that is called when the character amounts are changed, syncing the numbers.
 function syncCharacterAmount(i) {
   const value = i.target.value;
   characterAmountSlider.value = value;
@@ -30,17 +31,16 @@ function generatePassword() {
 
   // assessment of how many characters checked.
   const charAmount = characterAmountNumber.value;
-  console.log(charAmount);
 
   // Prevents passwords being too long or too short.
   switch(true) {
     case (charAmount < 8):
     case (charAmount > 128):
-      alert("Number of Characters restriced to 8-128");
+      alert("Number of Characters restricted to 8-128");
       return;
   }
 
-  // Prenvents passwords with no characters!
+  // Prevents passwords with no characters!
   if ((includeLowerCase !== true) && (includeUpperCase !== true) && (includeNumbers !== true) && (includeSpecialChars !== true)) {
     alert("You must select a character type");
     return;
@@ -71,8 +71,6 @@ function generatePassword() {
       passwordArray = passwordArray.concat(specialChar);
       break;
   }
-
-  console.log(passwordArray);
 
   // for loop that generates password
   for(i = 0; i < charAmount; i++) {
