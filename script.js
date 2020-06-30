@@ -11,7 +11,7 @@ const numberChar = "0123456789".split('');
 const specialChar = "`~!@#$%^&*()-_=+[]\|}{',./<>?".split('');
 
 
-// Sync of character amount slider and number input.  I found this method form Web Dev Simplified.
+// Sync of character amount slider and number input.  I found this method from Web Dev Simplified.
 // Source Link: https://www.youtube.com/watch?v=iKo9pDKKHnc
 characterAmountSlider.addEventListener('input', syncCharacterAmount);
 characterAmountNumber.addEventListener('input', syncCharacterAmount);
@@ -39,13 +39,11 @@ function generatePassword() {
       alert("Number of Characters restricted to 8-128");
       return;
   }
-
   // Prevents passwords with no characters!
   if ((includeLowerCase !== true) && (includeUpperCase !== true) && (includeNumbers !== true) && (includeSpecialChars !== true)) {
     alert("You must select a character type");
     return;
   }
-
 
   // final password selection array and final password
   let passwordArray = [];
@@ -71,11 +69,12 @@ function generatePassword() {
       passwordArray = passwordArray.concat(specialChar);
       break;
   }
-
+ 
   // for loop that generates password
   for(i = 0; i < charAmount; i++) {
     password.push(passwordArray[Math.floor(Math.random() * passwordArray.length)])
   }
+ 
   // converts password into a string, removing the commas.
   const finalPassword = password.join('');
   // returns the password
@@ -86,9 +85,7 @@ function generatePassword() {
 function writePassword() {
   const password = generatePassword();
   const passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
