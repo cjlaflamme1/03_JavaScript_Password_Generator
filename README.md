@@ -22,6 +22,10 @@ For this project I had to do a lot of research to better understand the process 
 
 ![Webpage Example Image](WebsiteScreenShot.jpg)
 
+#### Error Message 1
+
 ![Error message Example Image](ErrorExample1.jpg)
+
+#### Error Message 2
 
 ![Error message example image 2](ErrorExample2.jpg)
